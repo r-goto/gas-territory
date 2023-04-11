@@ -10,14 +10,14 @@ function changeSheetNames() {
   };
 
   for (var area in allArea) {
-    Logger.log(`すべてワンルーム区域のデータ保護を削除しています。これには時間がかかります。`)
+    Logger.log(`フォルダ内のすべてワンルーム区域のシート名を一括で変しています。これには時間がかかります。`)
     var folder = DriveApp.getFolderById(allArea[area]);
     var files = folder.getFilesByType(MimeType.GOOGLE_SHEETS);
 
     while (files.hasNext()) {
       var file = files.next();
       var sheet = SpreadsheetApp.openById(file.getId()).getActiveSheet();
-      sheet.setName("全部屋番号2");
+      sheet.setName("部屋番号");
     }
   }
 }
